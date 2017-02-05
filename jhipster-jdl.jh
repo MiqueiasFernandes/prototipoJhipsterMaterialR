@@ -1,0 +1,61 @@
+entity TBUsuario {
+	idusuario Long required
+	nome String
+	senha String
+	email String
+	diretorio String
+}
+
+enum TBTiposessao {
+	BATCH, LIVE
+}
+
+entity TBSessao {
+	idsessao Long required
+	idmodeloexclusivo String
+	tipo TBTiposessao required
+}
+
+entity TBModeloGenerico {
+	idmodelogenerico String required
+	idusuario Long required
+	script String
+}
+
+entity TBModeloExclusivo{
+	idmodeloexclusivo String required
+	idusuario Long required
+	idmodelogenerico String 
+	mapeamento String
+}
+
+entity TBBase{
+	idbase String required
+	idusuario Long required
+	url String required
+}
+
+entity TBProjeto{
+	idprojeto String required
+	idusuario Long required
+	idsessao Long
+	idbase String
+	script String
+}
+
+relationship OneToMany {
+	TBUsuario{usa} to TBProjeto,
+	TBUsuario{possui} to TBModeloGenerico,
+	TBUsuario{armazena} to TBBase,
+	TBProjeto{referencia} to TBBase,
+	TBProjeto{mantem} to TBSessao,
+	TBSessao{associa} to TBModeloExclusivo
+}
+
+relationship OneToOne {
+	TBModeloExclusivo{mapeia} to TBModeloGenerico
+}
+
+paginate TBUsuario, TBSessao with infinite-scroll
+paginate TBModeloGenerico, TBModeloExclusivo, TBBase, TBProjeto with pagination
+

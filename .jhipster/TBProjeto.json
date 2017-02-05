@@ -1,0 +1,56 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "tBUsuario",
+            "otherEntityName": "tBUsuario",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "referencia",
+            "otherEntityName": "tBBase",
+            "otherEntityRelationshipName": "tBProjeto"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "mantem",
+            "otherEntityName": "tBSessao",
+            "otherEntityRelationshipName": "tBProjeto"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idprojeto",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idusuario",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idsessao",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "idbase",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "script",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170205001101",
+    "entityTableName": "tb_projeto",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

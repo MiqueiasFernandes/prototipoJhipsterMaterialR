@@ -1,0 +1,26 @@
+{
+    "projeto1App": {
+        "tBBase" : {
+            "home": {
+                "title": "TB Bases",
+                "createLabel": "Criar novo TB Base",
+                "createOrEditLabel": "Criar ou editar TB Base",
+                "search": "Pesquisar por TB Base"
+            },
+            "created": "Um novo TB Base é criado com o identificador {{ param }}",
+            "updated": "Um TB Base é atualizado com o identificador {{ param }}",
+            "deleted": "Um TB Base é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir TB Base {{ id }}?"
+            },
+            "detail": {
+                "title": "TB Base"
+            },
+            "idbase": "Idbase",
+            "idusuario": "Idusuario",
+            "url": "Url",
+            "tBUsuario": "T B Usuario",
+            "tBProjeto": "T B Projeto"
+        }
+    }
+}

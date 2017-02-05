@@ -1,0 +1,27 @@
+{
+    "projeto1App": {
+        "tBModeloExclusivo" : {
+            "home": {
+                "title": "TB Modelo Exclusivos",
+                "createLabel": "Criar novo TB Modelo Exclusivo",
+                "createOrEditLabel": "Criar ou editar TB Modelo Exclusivo",
+                "search": "Pesquisar por TB Modelo Exclusivo"
+            },
+            "created": "Um novo TB Modelo Exclusivo é criado com o identificador {{ param }}",
+            "updated": "Um TB Modelo Exclusivo é atualizado com o identificador {{ param }}",
+            "deleted": "Um TB Modelo Exclusivo é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir TB Modelo Exclusivo {{ id }}?"
+            },
+            "detail": {
+                "title": "TB Modelo Exclusivo"
+            },
+            "idmodeloexclusivo": "Idmodeloexclusivo",
+            "idusuario": "Idusuario",
+            "idmodelogenerico": "Idmodelogenerico",
+            "mapeamento": "Mapeamento",
+            "tBSessao": "T B Sessao",
+            "mapeia": "Mapeia"
+        }
+    }
+}

@@ -7,6 +7,12 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entidades",
+                "tBBase": "TB Base",
+                "tBModeloExclusivo": "TB Modelo Exclusivo",
+                "tBModeloGenerico": "TB Modelo Generico",
+                "tBProjeto": "TB Projeto",
+                "tBSessao": "TB Sessao",
+                "tBUsuario": "TB Usuario",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

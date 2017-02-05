@@ -1,0 +1,26 @@
+{
+    "projeto1App": {
+        "tBSessao" : {
+            "home": {
+                "title": "TB Sessaos",
+                "createLabel": "Create a new TB Sessao",
+                "createOrEditLabel": "Create or edit a TB Sessao",
+                "search": "Search for TB Sessao"
+            },
+            "created": "A new TB Sessao is created with identifier {{ param }}",
+            "updated": "A TB Sessao is updated with identifier {{ param }}",
+            "deleted": "A TB Sessao is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete TB Sessao {{ id }}?"
+            },
+            "detail": {
+                "title": "TB Sessao"
+            },
+            "idsessao": "Idsessao",
+            "idmodeloexclusivo": "Idmodeloexclusivo",
+            "tipo": "Tipo",
+            "associa": "Associa",
+            "tBProjeto": "T B Projeto"
+        }
+    }
+}

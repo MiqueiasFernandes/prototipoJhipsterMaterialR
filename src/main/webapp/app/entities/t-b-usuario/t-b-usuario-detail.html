@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="projeto1App.tBUsuario.detail.title">TB Usuario</span> {{vm.tBUsuario.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="projeto1App.tBUsuario.idusuario">Idusuario</span></dt>
+        <dd>
+            <span>{{vm.tBUsuario.idusuario}}</span>
+        </dd>
+        <dt><span data-translate="projeto1App.tBUsuario.nome">Nome</span></dt>
+        <dd>
+            <span>{{vm.tBUsuario.nome}}</span>
+        </dd>
+        <dt><span data-translate="projeto1App.tBUsuario.senha">Senha</span></dt>
+        <dd>
+            <span>{{vm.tBUsuario.senha}}</span>
+        </dd>
+        <dt><span data-translate="projeto1App.tBUsuario.email">Email</span></dt>
+        <dd>
+            <span>{{vm.tBUsuario.email}}</span>
+        </dd>
+        <dt><span data-translate="projeto1App.tBUsuario.diretorio">Diretorio</span></dt>
+        <dd>
+            <span>{{vm.tBUsuario.diretorio}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="t-b-usuario-detail.edit({id:vm.tBUsuario.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

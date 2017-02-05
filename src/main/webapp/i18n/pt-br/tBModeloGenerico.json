@@ -1,0 +1,25 @@
+{
+    "projeto1App": {
+        "tBModeloGenerico" : {
+            "home": {
+                "title": "TB Modelo Genericos",
+                "createLabel": "Criar novo TB Modelo Generico",
+                "createOrEditLabel": "Criar ou editar TB Modelo Generico",
+                "search": "Pesquisar por TB Modelo Generico"
+            },
+            "created": "Um novo TB Modelo Generico é criado com o identificador {{ param }}",
+            "updated": "Um TB Modelo Generico é atualizado com o identificador {{ param }}",
+            "deleted": "Um TB Modelo Generico é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir TB Modelo Generico {{ id }}?"
+            },
+            "detail": {
+                "title": "TB Modelo Generico"
+            },
+            "idmodelogenerico": "Idmodelogenerico",
+            "idusuario": "Idusuario",
+            "script": "Script",
+            "tBUsuario": "T B Usuario"
+        }
+    }
+}

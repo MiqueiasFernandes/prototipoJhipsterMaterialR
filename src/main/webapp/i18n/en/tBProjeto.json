@@ -1,0 +1,29 @@
+{
+    "projeto1App": {
+        "tBProjeto" : {
+            "home": {
+                "title": "TB Projetos",
+                "createLabel": "Create a new TB Projeto",
+                "createOrEditLabel": "Create or edit a TB Projeto",
+                "search": "Search for TB Projeto"
+            },
+            "created": "A new TB Projeto is created with identifier {{ param }}",
+            "updated": "A TB Projeto is updated with identifier {{ param }}",
+            "deleted": "A TB Projeto is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete TB Projeto {{ id }}?"
+            },
+            "detail": {
+                "title": "TB Projeto"
+            },
+            "idprojeto": "Idprojeto",
+            "idusuario": "Idusuario",
+            "idsessao": "Idsessao",
+            "idbase": "Idbase",
+            "script": "Script",
+            "tBUsuario": "T B Usuario",
+            "referencia": "Referencia",
+            "mantem": "Mantem"
+        }
+    }
+}

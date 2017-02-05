@@ -1,0 +1,78 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTBModeloExclusivoLabel" data-translate="projeto1App.tBModeloExclusivo.home.createOrEditLabel">Create or edit a TB Modelo Exclusivo</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.tBModeloExclusivo.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.tBModeloExclusivo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="projeto1App.tBModeloExclusivo.idmodeloexclusivo" for="field_idmodeloexclusivo">Idmodeloexclusivo</label>
+            <input type="text" class="form-control" name="idmodeloexclusivo" id="field_idmodeloexclusivo"
+                    ng-model="vm.tBModeloExclusivo.idmodeloexclusivo"
+                    required/>
+            <div ng-show="editForm.idmodeloexclusivo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.idmodeloexclusivo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="projeto1App.tBModeloExclusivo.idusuario" for="field_idusuario">Idusuario</label>
+            <input type="number" class="form-control" name="idusuario" id="field_idusuario"
+                    ng-model="vm.tBModeloExclusivo.idusuario"
+                    required/>
+            <div ng-show="editForm.idusuario.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.idusuario.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.idusuario.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="projeto1App.tBModeloExclusivo.idmodelogenerico" for="field_idmodelogenerico">Idmodelogenerico</label>
+            <input type="text" class="form-control" name="idmodelogenerico" id="field_idmodelogenerico"
+                    ng-model="vm.tBModeloExclusivo.idmodelogenerico"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="projeto1App.tBModeloExclusivo.mapeamento" for="field_mapeamento">Mapeamento</label>
+            <input type="text" class="form-control" name="mapeamento" id="field_mapeamento"
+                    ng-model="vm.tBModeloExclusivo.mapeamento"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="projeto1App.tBModeloExclusivo.tBSessao" for="field_tBSessao">T B Sessao</label>
+            <select class="form-control" id="field_tBSessao" name="tBSessao" ng-model="vm.tBModeloExclusivo.tBSessao" ng-options="tBSessao as tBSessao.id for tBSessao in vm.tbsessaos track by tBSessao.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="projeto1App.tBModeloExclusivo.mapeia" for="field_mapeia">Mapeia</label>
+            <select class="form-control" id="field_mapeia" name="mapeia" ng-model="vm.tBModeloExclusivo.mapeia" ng-options="tBModeloGenerico as tBModeloGenerico.id for tBModeloGenerico in vm.mapeias | orderBy:'id' track by tBModeloGenerico.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

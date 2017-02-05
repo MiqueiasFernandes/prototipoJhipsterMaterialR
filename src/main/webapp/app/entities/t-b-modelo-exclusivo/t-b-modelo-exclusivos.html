@@ -1,0 +1,91 @@
+<div>
+    <h2 data-translate="projeto1App.tBModeloExclusivo.home.title">TB Modelo Exclusivos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="t-b-modelo-exclusivo.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="projeto1App.tBModeloExclusivo.home.createLabel">
+                        Create new TB Modelo Exclusivo
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'projeto1App.tBModeloExclusivo.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="idmodeloexclusivo"><span data-translate="projeto1App.tBModeloExclusivo.idmodeloexclusivo">Idmodeloexclusivo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="idusuario"><span data-translate="projeto1App.tBModeloExclusivo.idusuario">Idusuario</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="idmodelogenerico"><span data-translate="projeto1App.tBModeloExclusivo.idmodelogenerico">Idmodelogenerico</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="mapeamento"><span data-translate="projeto1App.tBModeloExclusivo.mapeamento">Mapeamento</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="tBSessao.id"><span data-translate="projeto1App.tBModeloExclusivo.tBSessao">T B Sessao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="mapeia.id"><span data-translate="projeto1App.tBModeloExclusivo.mapeia">Mapeia</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="tBModeloExclusivo in vm.tBModeloExclusivos track by tBModeloExclusivo.id">
+                    <td><a ui-sref="t-b-modelo-exclusivo-detail({id:tBModeloExclusivo.id})">{{tBModeloExclusivo.id}}</a></td>
+                    <td>{{tBModeloExclusivo.idmodeloexclusivo}}</td>
+                    <td>{{tBModeloExclusivo.idusuario}}</td>
+                    <td>{{tBModeloExclusivo.idmodelogenerico}}</td>
+                    <td>{{tBModeloExclusivo.mapeamento}}</td>
+                    <td>
+                        <a ui-sref="t-b-sessao-detail({id:tBModeloExclusivo.tBSessao.id})">{{tBModeloExclusivo.tBSessao.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="t-b-modelo-generico-detail({id:tBModeloExclusivo.mapeia.id})">{{tBModeloExclusivo.mapeia.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="t-b-modelo-exclusivo-detail({id:tBModeloExclusivo.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="t-b-modelo-exclusivo.edit({id:tBModeloExclusivo.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="t-b-modelo-exclusivo.delete({id:tBModeloExclusivo.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

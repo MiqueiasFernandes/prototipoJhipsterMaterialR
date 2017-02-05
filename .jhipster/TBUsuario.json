@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "usa",
+            "otherEntityName": "tBProjeto",
+            "otherEntityRelationshipName": "tBUsuario"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "possui",
+            "otherEntityName": "tBModeloGenerico",
+            "otherEntityRelationshipName": "tBUsuario"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "armazena",
+            "otherEntityName": "tBBase",
+            "otherEntityRelationshipName": "tBUsuario"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idusuario",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "senha",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "diretorio",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170205001101",
+    "entityTableName": "tb_usuario",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no"
+}

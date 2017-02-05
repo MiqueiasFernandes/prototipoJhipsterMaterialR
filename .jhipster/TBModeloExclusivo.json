@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "tBSessao",
+            "otherEntityName": "tBSessao",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "mapeia",
+            "otherEntityName": "tBModeloGenerico",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "tBModeloExclusivo"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idmodeloexclusivo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idusuario",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idmodelogenerico",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mapeamento",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170205001101",
+    "entityTableName": "tb_modelo_exclusivo",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

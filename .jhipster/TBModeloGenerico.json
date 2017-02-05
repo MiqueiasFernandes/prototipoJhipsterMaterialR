@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "tBUsuario",
+            "otherEntityName": "tBUsuario",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idmodelogenerico",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idusuario",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "script",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170205001101",
+    "entityTableName": "tb_modelo_generico",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

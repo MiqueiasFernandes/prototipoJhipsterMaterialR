@@ -20,5 +20,29 @@
 
     <cache alias="com.mfernandes.app.domain.User.persistentTokens" uses-template="simple"/>
 
+    <cache alias="com.mfernandes.app.domain.TBBase" uses-template="simple"/>
+
+    <cache alias="com.mfernandes.app.domain.TBModeloExclusivo" uses-template="simple"/>
+
+    <cache alias="com.mfernandes.app.domain.TBModeloGenerico" uses-template="simple"/>
+
+    <cache alias="com.mfernandes.app.domain.TBProjeto" uses-template="simple"/>
+
+    <cache alias="com.mfernandes.app.domain.TBProjeto.referencias" uses-template="simple"/>
+
+    <cache alias="com.mfernandes.app.domain.TBProjeto.mantems" uses-template="simple"/>
+
+    <cache alias="com.mfernandes.app.domain.TBSessao" uses-template="simple"/>
+
+    <cache alias="com.mfernandes.app.domain.TBSessao.associas" uses-template="simple"/>
+
+    <cache alias="com.mfernandes.app.domain.TBUsuario" uses-template="simple"/>
+
+    <cache alias="com.mfernandes.app.domain.TBUsuario.usas" uses-template="simple"/>
+
+    <cache alias="com.mfernandes.app.domain.TBUsuario.possuis" uses-template="simple"/>
+
+    <cache alias="com.mfernandes.app.domain.TBUsuario.armazenas" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

@@ -9,10 +9,12 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css content/css/vendor.css -->
+    <link rel="stylesheet" href="content/css/vendor.css">
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css">
     <!-- endinject -->
-    <link rel="stylesheet" href="content/css/vendor.css">
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
     <link rel="stylesheet" href="content/css/main.css">
@@ -51,6 +53,8 @@
     <script src="bower_components/json3/lib/json3.js"></script>
     <script src="bower_components/sockjs-client/dist/sockjs.js"></script>
     <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
+    <script src="bower_components/arrive/src/arrive.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
@@ -69,6 +73,8 @@
     <script src="bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.js"></script>
     <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
     <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
 
@@ -94,6 +100,48 @@
     <script src="app/layouts/error/error.state.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>
+    <script src="app/entities/t-b-usuario/t-b-usuario-dialog.controller.js"></script>
+    <script src="app/entities/t-b-usuario/t-b-usuario-detail.controller.js"></script>
+    <script src="app/entities/t-b-usuario/t-b-usuario-delete-dialog.controller.js"></script>
+    <script src="app/entities/t-b-usuario/t-b-usuario.state.js"></script>
+    <script src="app/entities/t-b-usuario/t-b-usuario.service.js"></script>
+    <script src="app/entities/t-b-usuario/t-b-usuario.search.service.js"></script>
+    <script src="app/entities/t-b-usuario/t-b-usuario.controller.js"></script>
+    <script src="app/entities/t-b-sessao/t-b-sessao-dialog.controller.js"></script>
+    <script src="app/entities/t-b-sessao/t-b-sessao-detail.controller.js"></script>
+    <script src="app/entities/t-b-sessao/t-b-sessao-delete-dialog.controller.js"></script>
+    <script src="app/entities/t-b-sessao/t-b-sessao.state.js"></script>
+    <script src="app/entities/t-b-sessao/t-b-sessao.service.js"></script>
+    <script src="app/entities/t-b-sessao/t-b-sessao.search.service.js"></script>
+    <script src="app/entities/t-b-sessao/t-b-sessao.controller.js"></script>
+    <script src="app/entities/t-b-projeto/t-b-projeto-dialog.controller.js"></script>
+    <script src="app/entities/t-b-projeto/t-b-projeto-detail.controller.js"></script>
+    <script src="app/entities/t-b-projeto/t-b-projeto-delete-dialog.controller.js"></script>
+    <script src="app/entities/t-b-projeto/t-b-projeto.state.js"></script>
+    <script src="app/entities/t-b-projeto/t-b-projeto.service.js"></script>
+    <script src="app/entities/t-b-projeto/t-b-projeto.search.service.js"></script>
+    <script src="app/entities/t-b-projeto/t-b-projeto.controller.js"></script>
+    <script src="app/entities/t-b-modelo-generico/t-b-modelo-generico-dialog.controller.js"></script>
+    <script src="app/entities/t-b-modelo-generico/t-b-modelo-generico-detail.controller.js"></script>
+    <script src="app/entities/t-b-modelo-generico/t-b-modelo-generico-delete-dialog.controller.js"></script>
+    <script src="app/entities/t-b-modelo-generico/t-b-modelo-generico.state.js"></script>
+    <script src="app/entities/t-b-modelo-generico/t-b-modelo-generico.service.js"></script>
+    <script src="app/entities/t-b-modelo-generico/t-b-modelo-generico.search.service.js"></script>
+    <script src="app/entities/t-b-modelo-generico/t-b-modelo-generico.controller.js"></script>
+    <script src="app/entities/t-b-modelo-exclusivo/t-b-modelo-exclusivo-dialog.controller.js"></script>
+    <script src="app/entities/t-b-modelo-exclusivo/t-b-modelo-exclusivo-detail.controller.js"></script>
+    <script src="app/entities/t-b-modelo-exclusivo/t-b-modelo-exclusivo-delete-dialog.controller.js"></script>
+    <script src="app/entities/t-b-modelo-exclusivo/t-b-modelo-exclusivo.state.js"></script>
+    <script src="app/entities/t-b-modelo-exclusivo/t-b-modelo-exclusivo.service.js"></script>
+    <script src="app/entities/t-b-modelo-exclusivo/t-b-modelo-exclusivo.search.service.js"></script>
+    <script src="app/entities/t-b-modelo-exclusivo/t-b-modelo-exclusivo.controller.js"></script>
+    <script src="app/entities/t-b-base/t-b-base-dialog.controller.js"></script>
+    <script src="app/entities/t-b-base/t-b-base-detail.controller.js"></script>
+    <script src="app/entities/t-b-base/t-b-base-delete-dialog.controller.js"></script>
+    <script src="app/entities/t-b-base/t-b-base.state.js"></script>
+    <script src="app/entities/t-b-base/t-b-base.service.js"></script>
+    <script src="app/entities/t-b-base/t-b-base.search.service.js"></script>
+    <script src="app/entities/t-b-base/t-b-base.controller.js"></script>
     <script src="app/entities/entity.state.js"></script>
     <script src="app/components/util/truncate-words.filter.js"></script>
     <script src="app/components/util/truncate-characters.filter.js"></script>
@@ -132,6 +180,7 @@
     <script src="app/blocks/config/localstorage.config.js"></script>
     <script src="app/blocks/config/http.config.js"></script>
     <script src="app/blocks/config/compile.config.js"></script>
+    <script src="app/blocks/config/bootstrap-material.config.js"></script>
     <script src="app/blocks/config/alert.config.js"></script>
     <script src="app/app.state.js"></script>
     <script src="app/app.constants.js"></script>

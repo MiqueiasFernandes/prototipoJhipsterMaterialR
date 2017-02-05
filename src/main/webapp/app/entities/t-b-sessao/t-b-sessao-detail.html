@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="projeto1App.tBSessao.detail.title">TB Sessao</span> {{vm.tBSessao.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="projeto1App.tBSessao.idsessao">Idsessao</span></dt>
+        <dd>
+            <span>{{vm.tBSessao.idsessao}}</span>
+        </dd>
+        <dt><span data-translate="projeto1App.tBSessao.idmodeloexclusivo">Idmodeloexclusivo</span></dt>
+        <dd>
+            <span>{{vm.tBSessao.idmodeloexclusivo}}</span>
+        </dd>
+        <dt><span data-translate="projeto1App.tBSessao.tipo">Tipo</span></dt>
+        <dd>
+            <span data-translate="{{'projeto1App.TBTiposessao.' + vm.tBSessao.tipo}}">{{vm.tBSessao.tipo}}</span>
+        </dd>
+        <dt><span data-translate="projeto1App.tBSessao.tBProjeto">T B Projeto</span></dt>
+        <dd>
+            <a ui-sref="t-b-projeto-detail({id:vm.tBSessao.tBProjeto.id})">{{vm.tBSessao.tBProjeto.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="t-b-sessao-detail.edit({id:vm.tBSessao.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

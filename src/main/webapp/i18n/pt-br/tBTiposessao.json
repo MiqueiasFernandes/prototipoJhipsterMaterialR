@@ -1,0 +1,9 @@
+{
+    "projeto1App": {
+        "TBTiposessao" : {
+            "null": "",
+            "BATCH": "BATCH",
+            "LIVE": "LIVE"
+        }
+    }
+}

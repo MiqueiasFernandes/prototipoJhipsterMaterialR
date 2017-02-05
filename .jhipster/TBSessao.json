@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "associa",
+            "otherEntityName": "tBModeloExclusivo",
+            "otherEntityRelationshipName": "tBSessao"
+        },
+        {
+            "relationshipName": "tBProjeto",
+            "otherEntityName": "tBProjeto",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idsessao",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "idmodeloexclusivo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "TBTiposessao",
+            "fieldValues": "BATCH,LIVE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170205001101",
+    "entityTableName": "tb_sessao",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no"
+}

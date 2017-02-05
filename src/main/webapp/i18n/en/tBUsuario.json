@@ -1,0 +1,29 @@
+{
+    "projeto1App": {
+        "tBUsuario" : {
+            "home": {
+                "title": "TB Usuarios",
+                "createLabel": "Create a new TB Usuario",
+                "createOrEditLabel": "Create or edit a TB Usuario",
+                "search": "Search for TB Usuario"
+            },
+            "created": "A new TB Usuario is created with identifier {{ param }}",
+            "updated": "A TB Usuario is updated with identifier {{ param }}",
+            "deleted": "A TB Usuario is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete TB Usuario {{ id }}?"
+            },
+            "detail": {
+                "title": "TB Usuario"
+            },
+            "idusuario": "Idusuario",
+            "nome": "Nome",
+            "senha": "Senha",
+            "email": "Email",
+            "diretorio": "Diretorio",
+            "usa": "Usa",
+            "possui": "Possui",
+            "armazena": "Armazena"
+        }
+    }
+}

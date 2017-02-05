@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="projeto1App.tBBase.detail.title">TB Base</span> {{vm.tBBase.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="projeto1App.tBBase.idbase">Idbase</span></dt>
+        <dd>
+            <span>{{vm.tBBase.idbase}}</span>
+        </dd>
+        <dt><span data-translate="projeto1App.tBBase.idusuario">Idusuario</span></dt>
+        <dd>
+            <span>{{vm.tBBase.idusuario}}</span>
+        </dd>
+        <dt><span data-translate="projeto1App.tBBase.url">Url</span></dt>
+        <dd>
+            <span>{{vm.tBBase.url}}</span>
+        </dd>
+        <dt><span data-translate="projeto1App.tBBase.tBUsuario">T B Usuario</span></dt>
+        <dd>
+            <a ui-sref="t-b-usuario-detail({id:vm.tBBase.tBUsuario.id})">{{vm.tBBase.tBUsuario.id}}</a>
+        </dd>
+        <dt><span data-translate="projeto1App.tBBase.tBProjeto">T B Projeto</span></dt>
+        <dd>
+            <a ui-sref="t-b-projeto-detail({id:vm.tBBase.tBProjeto.id})">{{vm.tBBase.tBProjeto.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="t-b-base-detail.edit({id:vm.tBBase.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="projeto1App.tBModeloGenerico.detail.title">TB Modelo Generico</span> {{vm.tBModeloGenerico.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="projeto1App.tBModeloGenerico.idmodelogenerico">Idmodelogenerico</span></dt>
+        <dd>
+            <span>{{vm.tBModeloGenerico.idmodelogenerico}}</span>
+        </dd>
+        <dt><span data-translate="projeto1App.tBModeloGenerico.idusuario">Idusuario</span></dt>
+        <dd>
+            <span>{{vm.tBModeloGenerico.idusuario}}</span>
+        </dd>
+        <dt><span data-translate="projeto1App.tBModeloGenerico.script">Script</span></dt>
+        <dd>
+            <span>{{vm.tBModeloGenerico.script}}</span>
+        </dd>
+        <dt><span data-translate="projeto1App.tBModeloGenerico.tBUsuario">T B Usuario</span></dt>
+        <dd>
+            <a ui-sref="t-b-usuario-detail({id:vm.tBModeloGenerico.tBUsuario.id})">{{vm.tBModeloGenerico.tBUsuario.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="t-b-modelo-generico-detail.edit({id:vm.tBModeloGenerico.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
