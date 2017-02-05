@@ -102,7 +102,7 @@
 
 .navbar-nav > li > a {
   padding: 7px 7px 2px 7px;
-  margin-top: 17px;
+  /*margin-top: 17px;*/
   margin-left: 5px; }
 
 .navbar-nav .dropdown-menu {
@@ -6716,10 +6716,10 @@ fieldset[disabled] .form-control {
     float: left;
     text-decoration: none; }
 
-.navbar-nav > li > a {
+/*.navbar-nav > li > a {
   padding: 7px 7px 2px 7px;
   margin-top: 17px;
-  margin-left: 5px; }
+  margin-left: 5px; }*/
 
 .navbar-nav .dropdown-menu {
   margin-top: -40px !important; }

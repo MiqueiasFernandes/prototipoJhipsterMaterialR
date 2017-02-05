@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -7,13 +7,13 @@
 
     NavbarController.$inject = ['$state', 'Auth', 'Principal', 'ProfileService', 'LoginService', '$scope'];
 
-    function NavbarController ($state, Auth, Principal, ProfileService, LoginService, $scope) {
+    function NavbarController($state, Auth, Principal, ProfileService, LoginService, $scope) {
         var vm = this;
 
         vm.isNavbarCollapsed = true;
         vm.isAuthenticated = Principal.isAuthenticated;
 
-        ProfileService.getProfileInfo().then(function(response) {
+        ProfileService.getProfileInfo().then(function (response) {
             vm.inProduction = response.inProduction;
             vm.swaggerEnabled = response.swaggerEnabled;
         });
@@ -46,40 +46,60 @@
         }
 
 
-var $body = $('body');
-      var $openCloseBar = $('.navbar .navbar-header .bars');
+        var $body = $('body');
+        var $openCloseBar = $('.navbar .navbar-header .bars');
 
-      if(vm.isAuthenticated()){
-          abrirMenu();
-      }
+        fecharMenu(true);
+        if (vm.isAuthenticated()) {
+            abrirMenu();
+        }
 
-$scope.$on('authenticationSuccess', function() {
+        $scope.$on('authenticationSuccess', function () {
             abrirMenu();
         });
 
- $(window).resize(function () {
-     console.log("alter");
-             abrirMenu();
-             fecharMenu(false);
-         });
+        $(window).resize(function () {
+            abrirMenu();
+            fecharMenu(false);
+        });
 
 
 
- function abrirMenu() {
-     if(vm.isAuthenticated() && $body.width() > 1170){
-         $.AdminBSB.leftSideBar.setMenuHeight();
-          $body.removeClass('ls-closed');
-          $openCloseBar.fadeOut();
+        function abrirMenu() {
+            if (vm.isAuthenticated() && $body.width() > 1170) {
+                $.AdminBSB.leftSideBar.setMenuHeight();
+                $body.removeClass('ls-closed');
+                $openCloseBar.fadeOut();
+            }
         }
- }
 
 
         function fecharMenu(force) {
-            if((force || $body.width() < 1170 ) && !$body.hasClass('ls-closed')){
-            $body.addClass('ls-closed');
-            $openCloseBar.fadeIn();
+            if ((force || $body.width() < 1170) && !$body.hasClass('ls-closed')) {
+                $body.addClass('ls-closed');
+                $openCloseBar.fadeIn();
             }
         }
+
+        //Collapse or Expand Menu
+       $('.menu-toggle').on('click', function (e) {
+            var $this = $(this);
+            var $content = $this.next();
+
+            if ($($this.parents('ul')[0]).hasClass('list')) {
+                var $not = $(e.target).hasClass('menu-toggle') ? e.target : $(e.target).parents('.menu-toggle');
+
+                $.each($('.menu-toggle.toggled').not($not).next(), function (i, val) {
+                    if ($(val).is(':visible')) {
+                        $(val).prev().toggleClass('toggled');
+                        $(val).slideUp();
+                    }
+                });
+            }
+
+            $this.toggleClass('toggled');
+            $content.slideToggle(320);
+        });
 
     }
 })();

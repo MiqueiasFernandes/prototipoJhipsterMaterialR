@@ -50,51 +50,54 @@ $.AdminBSB.leftSideBar = {
         var $body = $('body');
         var $overlay = $('.overlay');
 
-        //Close sidebar
-        $(window).click(function (e) {
-            var $target = $(e.target);
-            if (e.target.nodeName.toLowerCase() === 'i') { $target = $(e.target).parent(); }
+        // //Close sidebar
+        //  $(window).click(function (e) {
+        //      var $target = $(e.target);
+        //      if (e.target.nodeName.toLowerCase() === 'i') { $target = $(e.target).parent(); }
 
-            if (!$target.hasClass('bars') && _this.isOpen() && $target.parents('#leftsidebar').length === 0) {
-                if (!$target.hasClass('js-right-sidebar')) $overlay.fadeOut();
-                $body.removeClass('overlay-open');
-            }
-        });
+        //      if (!$target.hasClass('bars') && _this.isOpen() && $target.parents('#leftsidebar').length === 0) {
+        //          if (!$target.hasClass('js-right-sidebar')) $overlay.fadeOut();
+        //          $body.removeClass('overlay-open');
+        //      }
 
-        $.each($('.menu-toggle.toggled'), function (i, val) {
-            $(val).next().slideToggle(0);
-        });
+        //  });
 
-        //When page load
-        $.each($('.menu .list li.active'), function (i, val) {
-            var $activeAnchors = $(val).find('a:eq(0)');
+        //  $.each($('.menu-toggle.toggled'), function (i, val) {
+        //      $(val).next().slideToggle(0);
+        //  });
 
-            $activeAnchors.addClass('toggled');
-            $activeAnchors.next().show();
-        });
+        // // //When page load
+        //  $.each($('.menu .list li.active'), function (i, val) {
+        //      var $activeAnchors = $(val).find('a:eq(0)');
+
+        //      $activeAnchors.addClass('toggled');
+        //      $activeAnchors.next().show();
+        // });
 
         //Collapse or Expand Menu
-        $('.menu-toggle').on('click', function (e) {
-            var $this = $(this);
-            var $content = $this.next();
+        //         var tog = $('.menu-toggle')
 
-            if ($($this.parents('ul')[0]).hasClass('list')) {
-                var $not = $(e.target).hasClass('menu-toggle') ? e.target : $(e.target).parents('.menu-toggle');
+        // tog.on('click', function (e) {
+        //             var $this = $(this);
+        //             var $content = $this.next();
 
-                $.each($('.menu-toggle.toggled').not($not).next(), function (i, val) {
-                    if ($(val).is(':visible')) {
-                        $(val).prev().toggleClass('toggled');
-                        $(val).slideUp();
-                    }
-                });
-            }
+        //             if ($($this.parents('ul')[0]).hasClass('list')) {
+        //                 var $not = $(e.target).hasClass('menu-toggle') ? e.target : $(e.target).parents('.menu-toggle');
 
-            $this.toggleClass('toggled');
-            $content.slideToggle(320);
-        });
+        //                 $.each($('.menu-toggle.toggled').not($not).next(), function (i, val) {
+        //                     if ($(val).is(':visible')) {
+        //                         $(val).prev().toggleClass('toggled');
+        //                         $(val).slideUp();
+        //                     }
+        //                 });
+        //             }
+
+        //             $this.toggleClass('toggled');
+        //             $content.slideToggle(320);
+        //         });
 
         //Set menu height
-        _this.close();
+        // _this.close();
         // _this.checkStatuForResize(true, false);
         // $(window).resize(function () {
         //     _this.setMenuHeight();
@@ -124,10 +127,10 @@ $.AdminBSB.leftSideBar = {
             });
         }
     },
-//$.AdminBSB.leftSideBar.checkStatuForResize(false, true);
+    //$.AdminBSB.leftSideBar.checkStatuForResize(false, true);
     close: function () {
-         var $body = $('body');
-         var $openCloseBar = $('.navbar .navbar-header .bars');
+        var $body = $('body');
+        var $openCloseBar = $('.navbar .navbar-header .bars');
         // var width = $body.width();
 
         // if (firstTime) {
@@ -137,8 +140,8 @@ $.AdminBSB.leftSideBar = {
         // }
 
         // if (width < 1170 || forceClose) {
-             $body.addClass('ls-closed');
-            $openCloseBar.fadeIn();
+        $body.addClass('ls-closed');
+        $openCloseBar.fadeIn();
         // }
         // else {
         //     $body.removeClass('ls-closed');
@@ -367,81 +370,11 @@ $.AdminBSB.dropdownMenu = {
         });
     }
 }
-//==========================================================================================================================
 
-/* Browser - Function ======================================================================================================
-*  You can manage browser
-*  
-*/
-var edge = 'Microsoft Edge';
-var ie10 = 'Internet Explorer 10';
-var ie11 = 'Internet Explorer 11';
-var opera = 'Opera';
-var firefox = 'Mozilla Firefox';
-var chrome = 'Google Chrome';
-var safari = 'Safari';
-
-$.AdminBSB.browser = {
-    activate: function () {
-        var _this = this;
-        var className = _this.getClassName();
-
-        if (className !== '') $('html').addClass(_this.getClassName());
-    },
-    getBrowser: function () {
-        var userAgent = navigator.userAgent.toLowerCase();
-
-        if (/edge/i.test(userAgent)) {
-            return edge;
-        } else if (/rv:11/i.test(userAgent)) {
-            return ie11;
-        } else if (/msie 10/i.test(userAgent)) {
-            return ie10;
-        } else if (/opr/i.test(userAgent)) {
-            return opera;
-        } else if (/chrome/i.test(userAgent)) {
-            return chrome;
-        } else if (/firefox/i.test(userAgent)) {
-            return firefox;
-        } else if (!!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)) {
-            return safari;
-        }
-
-        return undefined;
-    },
-    getClassName: function () {
-        var browser = this.getBrowser();
-
-        if (browser === edge) {
-            return 'edge';
-        } else if (browser === ie11) {
-            return 'ie11';
-        } else if (browser === ie10) {
-            return 'ie10';
-        } else if (browser === opera) {
-            return 'opera';
-        } else if (browser === chrome) {
-            return 'chrome';
-        } else if (browser === firefox) {
-            return 'firefox';
-        } else if (browser === safari) {
-            return 'safari';
-        } else {
-            return '';
-        }
-    }
-}
 //==========================================================================================================================
 
 $(function () {
-    $.AdminBSB.browser.activate();
     $.AdminBSB.leftSideBar.activate();
-    $.AdminBSB.rightSideBar.activate();
     $.AdminBSB.navbar.activate();
     $.AdminBSB.dropdownMenu.activate();
-    $.AdminBSB.input.activate();
-    $.AdminBSB.select.activate();
-    $.AdminBSB.search.activate();
-
-    setTimeout(function () { $('.page-loader-wrapper').fadeOut(); }, 50);
 });
