@@ -1,0 +1,14 @@
+version: '2'
+services:
+    projeto1-mysql:
+        container_name: projeto1-mysql
+        image: mysql:5.7.13
+        # volumes:
+        #     - ~/volumes/jhipster/projeto1/mysql/:/var/lib/mysql/
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+            - MYSQL_DATABASE=projeto1
+        ports:
+            - 3306:3306
+        command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8

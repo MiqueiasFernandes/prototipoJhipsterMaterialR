@@ -1,0 +1,22 @@
+version: '2'
+services:
+    projeto1-app:
+        image: projeto1
+        external_links:
+            - projeto1-mysql:mysql
+            - projeto1-elasticsearch:elasticsearch
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/projeto1?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=elasticsearch:9300
+        ports:
+            - 8080:8080
+    projeto1-mysql:
+        extends:
+            file: mysql.yml
+            service: projeto1-mysql
+    projeto1-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: projeto1-elasticsearch
