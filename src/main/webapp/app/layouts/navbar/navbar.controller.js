@@ -18,6 +18,7 @@
             vm.swaggerEnabled = response.swaggerEnabled;
         });
 
+        vm.account = null;
         vm.login = login;
         vm.logout = logout;
         vm.toggleNavbar = toggleNavbar;
@@ -34,6 +35,11 @@
             Auth.logout();
             $state.go('home');
             fecharMenu(true);
+            getAccount();
+        }
+
+        function dashboard(){
+            $state.go('dashboard');
         }
 
 
@@ -56,6 +62,7 @@
 
         $scope.$on('authenticationSuccess', function () {
             abrirMenu();
+            getAccount();
         });
 
         $(window).resize(function () {
@@ -82,7 +89,7 @@
         }
 
         //Collapse or Expand Menu
-       $('.menu-toggle').on('click', function (e) {
+        $('.menu-toggle').on('click', function (e) {
             var $this = $(this);
             var $content = $this.next();
 
@@ -100,6 +107,19 @@
             $this.toggleClass('toggled');
             $content.slideToggle(320);
         });
+
+
+        function getAccount() {
+            Principal.identity().then(function (account) {
+                vm.account = account;
+                vm.isAuthenticated = Principal.isAuthenticated;
+            });
+        }
+
+        getAccount();
+
+        Waves.attach('.menu .list a', ['waves-block']);
+        Waves.init();
 
     }
 })();
