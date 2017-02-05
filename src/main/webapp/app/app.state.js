@@ -15,6 +15,11 @@
                     templateUrl: 'app/layouts/navbar/navbar.html',
                     controller: 'NavbarController',
                     controllerAs: 'vm'
+                },
+                'menuesquerdo@': {
+                    templateUrl: 'app/layouts/menuesquerdo/menuesquerdo.html',
+                    controller: 'Menuesquerdo',
+                    controllerAs: 'vm'
                 }
             },
             resolve: {

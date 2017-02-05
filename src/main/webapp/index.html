@@ -19,22 +19,45 @@
     <!-- build:css content/css/main.css -->
     <link rel="stylesheet" href="content/css/main.css">
     <!-- endbuild -->
+  <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="materialcss/animate.css">
+    <link rel="stylesheet" href="materialcss/waves.css">
+    <link rel="stylesheet" href="materialcss/morris.css">
+    <link rel="stylesheet" href="materialcss/design.css">
+    <link rel="stylesheet" href="materialcss/themes.css">
+
 </head>
-<body ng-app="projeto1App" ng-strict-di>
+<body ng-app="projeto1App" ng-strict-di class="theme-red">
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <page-ribbon></page-ribbon>
     <div ui-view="navbar" ng-cloak></div>
+
+
+
+ <section class="content">
+        <div class="container-fluid">
+<div class="well" ui-view="content">
+            <!-- Angular views -->
+        </div>
+        </div>
+ </section>
+
+
+
+<!--
     <div class="container">
         <div class="well" ui-view="content">
-            <!-- Angular views -->
+          
         </div>
 
         <div class="footer" ng-cloak>
             <p data-translate="footer">This is your footer</p>
         </div>
-    </div>
+    </div> -->
 
     <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
     <script>
@@ -227,6 +250,18 @@
     <script src="app/account/account.state.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
+
+
+<script src="materialjs/slimscroll.js"></script>
+<script src="materialjs/select.js"></script>
+<script src="materialjs/count.js"></script>
+<script src="materialjs/waves.js"></script>
+<script src="materialjs/admin.js"></script>
+<script src="materialjs/custom.js"></script>
+<script src="materialjs/demo.js"></script>
+
+
+
 
 </body>
 </html>
