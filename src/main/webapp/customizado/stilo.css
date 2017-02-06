@@ -1,0 +1,62 @@
+ .linha{
+                margin-bottom: 5px;
+                font-family: 'Inconsolata', monospace;
+            }
+
+            .linha-input{
+                color:  #006be9;
+            }
+
+            .linha-hiden{
+                display: none;
+            }
+
+            #alert{
+                float: right;
+                /*width: 300px;*/
+                font-size: 10px;
+                background-color: black;
+                color: dimgray;
+            }
+
+            #terminal{
+                width: 800px; 
+                font-size: 14px;
+                background-color: black;
+                font-family: 'Inconsolata', monospace;
+            }
+
+            #prompt{
+                float: left;
+                margin-top: 1px;
+                margin-right: 3px;
+                color: #006be9;
+                font-size: 16px;
+                background-color: black;
+                font-family: 'Inconsolata', monospace;
+                font-weight: 900;
+            }
+
+
+            #type {
+                font-size: 16px;
+                background-color: #f8f8f8;
+                outline: none;
+                color: #006be9;
+                border: none;
+                border-color: transparent;
+                padding: 0;
+                margin: 0;
+                background-color: black;
+                font-family: 'Inconsolata', monospace;
+                width: 70%;
+            }
+
+            #script{
+                background-color: #e91e63;
+                font-family: 'Inconsolata', monospace;
+                font-size: 14px;
+            }
+.bk-root{
+    z-index: 1;
+}
