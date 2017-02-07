@@ -60,3 +60,11 @@
 .bk-root{
     z-index: 1;
 }
+
+.visivel{
+    display : inline-block !important;
+}
+
+#scriptloader{
+    display: none; 
+}

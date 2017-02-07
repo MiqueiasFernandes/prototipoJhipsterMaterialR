@@ -109,7 +109,7 @@ var local = null;
 
 
 function initServers(servers) {
-    var url = "ws://" + local + "/prototiposervice/rlive/" + (getToken()) + "/";
+    var url = getLocal("ws") + "prototiposervice/rlive/" + (getToken()) + "/";
     for (var server in servers) {
         server = servers[server];
         log("tentando abrir conexão em " + url + server);
@@ -126,18 +126,24 @@ function initServers(servers) {
     }
 }
 
+function getLocal(protocol) {
+
+    var hostname = window.location.hostname;
+
+    return protocol + "://" + hostname + ":8090" + "/";
+}
 
 function initrLive() {
-    local = type.value;
-    if (!local) {
-        alertar("local nao esta definido! \ninsira-o no prompt ip:porta");
-        $('#realtime').prop("checked", false);
-        return;
-    }
-    log('iniciando webservice rlive... para ' + "http://" + local + "/prototiposervice/webresources/generic");
+    //local = type.value;
+    //if (!local) {
+    //  alertar("local nao esta definido! \ninsira-o no prompt ip:porta");
+    // $('#realtime').prop("checked", false);
+    // return;
+    //}
+    log('iniciando webservice rlive... para ' + getLocal("http") + "prototiposervice/webresources/generic");
     $.ajax({
         type: "get",
-        url: "http://" + local + "/prototiposervice/webresources/generic",
+        url: getLocal("http") + "prototiposervice/webresources/generic",
         data: {
             token: getToken()
         },
@@ -149,7 +155,7 @@ function initrLive() {
         },
         error: function (event, jqxhr, settings, thrownError) {
             log("error " + (jqxhr));
-             $('#realtime').prop("checked", false);
+            $('#realtime').prop("checked", false);
         }
     });
 }
@@ -157,44 +163,86 @@ function initrLive() {
 
 
 function log(text) {
-    alert.innerHTML += text + "<br/>";
+    alert.innerHTML = text;
+    console.log("[LOG SCRIPT MIKEIAS]: " + text);
 }
 
 
-function alertar(msg){
+function alertar(msg) {
 
-swal(msg);
+    swal(msg);
 }
+
+
+function abrirArquivo(nome) {
+    swal({
+        title: "Abrir arquivo gerado pela sessão",
+        text: "você realmente deseja visualizar o arquivo: " + nome + "?",
+        type: "info",
+        showCancelButton: true,
+        closeOnConfirm: true,
+        showLoaderOnConfirm: true,
+    }, function (inputValue) {
+        if (inputValue) {
+
+            $.ajax({
+                type: "get",
+                url: getLocal("http") + "prototiposervice/webresources/generic",
+                data: {
+                    file: nome
+                },
+                dataType: "json",
+                success: function (data) {
+
+                    log("file received: " + (data.file));
+
+                    $("#file").load(data.file, 
+                    swal("Houve um erro! ao ler em " + data.file),
+                        swal("Arquivo " + nome + " lido com sucesso!"));
+                },
+                error: function (event, jqxhr, settings, thrownError) {
+                    log("error " + (jqxhr));
+                }
+            });
+        }
+    });
+}
+
 
 
 function send() {
-
-    if (!local) {
-        alertar("local nao esta definido! \ninsira-o no prompt ip:porta");
-         $('#realtime').prop("checked", false);
-        return;
-    }
-
-
     var script = {
         token: getToken(),
         script: btoa($("#script").val())
     };
 
     log('sending.. ' + JSON.stringify(script));
-
+    $("#scriptloader").addClass('visivel');
     $.ajax({
-        url: "http://" + local + "/prototiposervice/webresources/generic",
+        url: getLocal("http") + "prototiposervice/webresources/generic",
         type: 'post',
         contentType: "text/plain",
         data: (JSON.stringify(script)),
         dataType: "text",
         success: function (data) {
-            var res = atob(data);
-            document.getElementById("saida").innerHTML = toHTML(res);
-            log("received post: " + res);
+            $("#scriptloader").removeClass('visivel');
+            var res = JSON.parse(atob(data));
+            log("received files: " + res.files);
+            showFile(res.files);
+            document.getElementById("script").value = toHTML(atob(res.resultado));
         }
     });
+}
+
+
+function showFile(files) {
+    files = files.split("/");
+    for (var file in files) {
+        file = files[file];
+        if (file.indexOf("rbokeh") > 0 && $("#script").val().indexOf(file) > 0) {
+              abrirArquivo(file);
+        }
+    }
 }
 
 function b64EncodeUnicode(str) {
